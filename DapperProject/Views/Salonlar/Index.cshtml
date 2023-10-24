@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DapperProject.Models.SalonlarModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "EY",null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalonNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalonAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalonKapiNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YapilanIslem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IslemSayisi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalonNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalonAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalonKapiNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YapilanIslem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IslemSayisi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EY", new { id = item.SalonNo },new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SalonNo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
